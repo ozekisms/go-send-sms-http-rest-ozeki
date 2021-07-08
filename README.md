@@ -1,4 +1,4 @@
-# How to use the go_send_sms_http_rest_ozeki package
+# How to use the go_send_sms_http_rest_ozeki package?
  
  The go-send-sms-http-rest-ozeki package is a tool for Ozeki SMS Gateway. With this library you can send, delete, mark and receive SMS messages using the built in api of the SMS Gateway.
 
