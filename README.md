@@ -32,8 +32,8 @@ To initialize a Message object we have to use the following code:
 
 ```go
     msg := ozeki.NewMessage()
-    msg.to_address = "+36201111111"
-    msg.text = "Hello world!"
+    msg.ToAddress = "+36201111111"
+    msg.Text = "Hello world!"
 ```
 To send your message  we should also create a MessageApi object.
 The MessageApi constructor takes only one parameter which is a configuration object.
@@ -41,5 +41,5 @@ The MessageApi constructor takes only one parameter which is a configuration obj
 ```go
     api := ozeki.NewMessageApi(configuration)
     
-    result := api.send(msg) #We save our result in a varriable
+    result := api.Send(msg) #We save our result in a varriable
 ```
