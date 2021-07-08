@@ -1,14 +1,14 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import "fmt"
 
 type MessageSendResults struct {
-	totalCount   int
-	successCount int
-	failedCount  int
-	results      []MessageSendResult
+	TotalCount   int
+	SuccessCount int
+	FailedCount  int
+	Results      []MessageSendResult
 }
 
 func (m MessageSendResults) String() string {
-	return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.totalCount, m.successCount, m.failedCount)
+	return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.TotalCount, m.SuccessCount, m.FailedCount)
 }

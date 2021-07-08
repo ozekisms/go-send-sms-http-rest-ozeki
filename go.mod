@@ -1,4 +1,4 @@
-module github.com/ozekisms/go-send-sms-http-rest-ozeki
+module github.com/ozekisms/go_send_sms_http_rest_ozeki
 
 go 1.16
 

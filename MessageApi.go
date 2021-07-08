@@ -1,4 +1,4 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import (
 	b64 "encoding/base64"
@@ -86,8 +86,8 @@ func (api *MessageApi) Send(message interface{}) interface{} {
 	var authorizationHeader string = api.createAuthorizationHeader(api._configuration.Username, api._configuration.Password)
 	var requestBody string = api.createRequestBody(message)
 	var result MessageSendResults = api.getResponseSend(api.doRequestPost(api.createUriToSendSms(api._configuration.ApiUrl), authorizationHeader, requestBody))
-	if len(result.results) == 1 {
-		return result.results[0]
+	if len(result.Results) == 1 {
+		return result.Results[0]
 	} else {
 		return result
 	}
@@ -161,21 +161,21 @@ func (api *MessageApi) getResponseSend(response string) MessageSendResults {
 	var resp send_response_struct
 	json.Unmarshal([]byte(response), &resp)
 	var results MessageSendResults = MessageSendResults{}
-	results.totalCount = resp.Data.TotalCount
-	results.successCount = resp.Data.SuccessCount
-	results.failedCount = resp.Data.FailedCount
+	results.TotalCount = resp.Data.TotalCount
+	results.SuccessCount = resp.Data.SuccessCount
+	results.FailedCount = resp.Data.FailedCount
 	for i := 0; i < len(resp.Data.Messages); i++ {
 		var result MessageSendResult = MessageSendResult{}
 		var msg Message = resp.Data.Messages[i]
-		result.message = msg
+		result.Message = msg
 		if msg.Status == "SUCCESS" {
-			result.status = Success
-			result.responseMessage = ""
+			result.Status = Success
+			result.ResponseMessage = ""
 		} else {
-			result.status = Success
-			result.responseMessage = msg.Status
+			result.Status = Success
+			result.ResponseMessage = msg.Status
 		}
-		results.results = append(results.results, result)
+		results.Results = append(results.Results, result)
 	}
 	return results
 }
@@ -242,8 +242,8 @@ func (api *MessageApi) getResponseReceive(response string) MessageReceiveResult 
 	var resp receive_response_struct
 	json.Unmarshal([]byte(response), &resp)
 	var result MessageReceiveResult = MessageReceiveResult{}
-	result.folder = resp.Data.Folder
-	result.limit = resp.Data.Limit
-	result.messages = resp.Data.Data
+	result.Folder = resp.Data.Folder
+	result.Limit = resp.Data.Limit
+	result.Messages = resp.Data.Data
 	return result
 }

@@ -1,4 +1,4 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 type manipulate_response_struct struct {
 	HttpCode    int                    "json:\"http_code\""

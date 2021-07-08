@@ -1,44 +1,44 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import "fmt"
 
 type MessageMarkResult struct {
-	folder                string
-	messageIdsMarkSucceed []string
-	messageIdsMarkFailed  []string
-	successCount          int
-	failedCount           int
-	totalCount            int
+	Folder                string
+	MessageIdsMarkSucceed []string
+	MessageIdsMarkFailed  []string
+	SuccessCount          int
+	FailedCount           int
+	TotalCount            int
 }
 
 func NewMessageMarkResult(folder string) MessageMarkResult {
 	var result MessageMarkResult = MessageMarkResult{}
-	result.folder = folder
-	result.messageIdsMarkSucceed = []string{}
-	result.messageIdsMarkFailed = []string{}
+	result.Folder = folder
+	result.MessageIdsMarkSucceed = []string{}
+	result.MessageIdsMarkFailed = []string{}
 	return result
 }
 
 func (m *MessageMarkResult) addIdMarkSucceed(id string) {
-	m.messageIdsMarkSucceed = append(m.messageIdsMarkSucceed, id)
-	m.successCount += 1
-	m.totalCount += 1
+	m.MessageIdsMarkSucceed = append(m.MessageIdsMarkSucceed, id)
+	m.SuccessCount += 1
+	m.TotalCount += 1
 }
 
 func (m *MessageMarkResult) addIdMarkFailed(id string) {
-	m.messageIdsMarkFailed = append(m.messageIdsMarkFailed, id)
-	m.failedCount += 1
-	m.totalCount += 1
+	m.MessageIdsMarkFailed = append(m.MessageIdsMarkFailed, id)
+	m.FailedCount += 1
+	m.TotalCount += 1
 }
 
 func (m MessageMarkResult) String() string {
-	if m.totalCount == 1 {
-		if m.totalCount == m.failedCount {
+	if m.TotalCount == 1 {
+		if m.TotalCount == m.SuccessCount {
 			return "true"
 		} else {
 			return "false"
 		}
 	} else {
-		return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.totalCount, m.successCount, m.failedCount)
+		return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.TotalCount, m.SuccessCount, m.FailedCount)
 	}
 }

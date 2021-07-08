@@ -1,44 +1,44 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import "fmt"
 
 type MessageDeleteResult struct {
-	folder                  string
-	messageIdsRemoveSucceed []string
-	messageIdsRemoveFailed  []string
-	successCount            int
-	failedCount             int
-	totalCount              int
+	Folder                  string
+	MessageIdsRemoveSucceed []string
+	MessageIdsRemoveFailed  []string
+	SuccessCount            int
+	FailedCount             int
+	TotalCount              int
 }
 
 func NewMessageDeleteResult(folder string) MessageDeleteResult {
 	var result MessageDeleteResult = MessageDeleteResult{}
-	result.folder = folder
-	result.messageIdsRemoveSucceed = []string{}
-	result.messageIdsRemoveFailed = []string{}
+	result.Folder = folder
+	result.MessageIdsRemoveSucceed = []string{}
+	result.MessageIdsRemoveFailed = []string{}
 	return result
 }
 
 func (m *MessageDeleteResult) addIdRemoveSucceed(id string) {
-	m.messageIdsRemoveSucceed = append(m.messageIdsRemoveSucceed, id)
-	m.successCount += 1
-	m.totalCount += 1
+	m.MessageIdsRemoveSucceed = append(m.MessageIdsRemoveSucceed, id)
+	m.SuccessCount += 1
+	m.TotalCount += 1
 }
 
 func (m *MessageDeleteResult) addIdRemoveFailed(id string) {
-	m.messageIdsRemoveFailed = append(m.messageIdsRemoveFailed, id)
-	m.failedCount += 1
-	m.totalCount += 1
+	m.MessageIdsRemoveFailed = append(m.MessageIdsRemoveFailed, id)
+	m.FailedCount += 1
+	m.TotalCount += 1
 }
 
 func (m MessageDeleteResult) String() string {
-	if m.totalCount == 1 {
-		if m.totalCount == m.failedCount {
+	if m.TotalCount == 1 {
+		if m.TotalCount == m.SuccessCount {
 			return "true"
 		} else {
 			return "false"
 		}
 	} else {
-		return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.totalCount, m.successCount, m.failedCount)
+		return fmt.Sprintf("Total: %d. Success: %d. Failed: %d.", m.TotalCount, m.SuccessCount, m.FailedCount)
 	}
 }

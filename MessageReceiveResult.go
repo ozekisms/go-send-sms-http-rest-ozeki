@@ -1,4 +1,4 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import "fmt"
 
@@ -16,11 +16,11 @@ type receive_data_struct struct {
 }
 
 type MessageReceiveResult struct {
-	folder   string
-	limit    string
-	messages []Message
+	Folder   string
+	Limit    string
+	Messages []Message
 }
 
 func (m MessageReceiveResult) String() string {
-	return fmt.Sprintf("Message count: %d", len(m.messages))
+	return fmt.Sprintf("Message count: %d", len(m.Messages))
 }

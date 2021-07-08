@@ -1,4 +1,4 @@
-package go-send-sms-http-rest-ozeki
+package go_send_sms_http_rest_ozeki
 
 import "fmt"
 
@@ -17,11 +17,11 @@ type send_data_struct struct {
 }
 
 type MessageSendResult struct {
-	message         Message
-	status          DeliveryStatus
-	responseMessage string
+	Message         Message
+	Status          DeliveryStatus
+	ResponseMessage string
 }
 
 func (m MessageSendResult) String() string {
-	return fmt.Sprintf("%s, %s", m.status, m.message)
+	return fmt.Sprintf("%s, %s", m.Status, m.Message)
 }
