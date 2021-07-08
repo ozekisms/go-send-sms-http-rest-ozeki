@@ -245,5 +245,6 @@ func (api *MessageApi) getResponseReceive(response string) MessageReceiveResult 
 	result.Folder = resp.Data.Folder
 	result.Limit = resp.Data.Limit
 	result.Messages = resp.Data.Data
+	api.Delete(Inbox, resp.Data.Data)
 	return result
 }
