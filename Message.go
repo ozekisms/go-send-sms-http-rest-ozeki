@@ -44,7 +44,7 @@ func NewMessage() Message {
 	return message
 }
 
-func (m *Message) addTag(name string, value string) {
+func (m *Message) AddTag(name string, value string) {
 	pair := make(map[string]string)
 	pair["name"] = name
 	pair["value"] = value
