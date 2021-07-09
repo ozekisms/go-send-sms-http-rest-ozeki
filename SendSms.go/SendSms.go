@@ -1,3 +1,4 @@
+//This is what happens if the repository gets updated.
 package main
 
 import (
