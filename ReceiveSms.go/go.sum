@@ -2,3 +2,5 @@ github.com/google/uuid v1.2.0 h1:qJYtXnJRWmpe7m/3XlyhrsLrEURqHRM2kxzoxXqyUDs=
 github.com/google/uuid v1.2.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/ozekisms/go_send_sms_http_rest_ozeki v0.0.0-20210708132434-388f01e71fe6 h1:6EbYbeQGYD7RNHgYCH1U3Y2Wloz1L5/pq5tRNFj7OZ4=
 github.com/ozekisms/go_send_sms_http_rest_ozeki v0.0.0-20210708132434-388f01e71fe6/go.mod h1:pKkjcA1TeVqtSrG7Jev4ErydrRcl88WIcU/SEhUJlRQ=
+github.com/ozekisms/go_send_sms_http_rest_ozeki v0.0.0-20210708144124-6d449ef9337a h1:CzyH6Sd2BDDJpkLiIadqZ8d1RYfizEJhZUKnzQssf9E=
+github.com/ozekisms/go_send_sms_http_rest_ozeki v0.0.0-20210708144124-6d449ef9337a/go.mod h1:pKkjcA1TeVqtSrG7Jev4ErydrRcl88WIcU/SEhUJlRQ=
